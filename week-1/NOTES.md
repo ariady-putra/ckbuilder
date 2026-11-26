@@ -32,7 +32,7 @@ CKByte is used as the fee currency for:
 
 **Cycles** compensate miners based on the computational resources used to verify a transaction as measured by CKB-VM.
 
-There is no limit on the cycles for an individual transaction or script, BUT [it is limited by `max_block_cycles`](https://docs.nervos.org/docs/getting-started/how-ckb-works#cycles) (in CKB Mainnet `MIRANA`, it's `3,500,000,000`).
+There is no limit on the cycles for an individual transaction or script, BUT [it is limited by `max_block_cycles`](https://docs.nervos.org/docs/getting-started/how-ckb-works#cycles) (on CKB Mainnet `MIRANA`, it's `3,500,000,000`).
 
 **Tx Fees** are paid to miners for providing the computing power.
 
@@ -54,6 +54,18 @@ Components:
 - Separator: always `1`
 - Data part: base32 encoded
 - Checksum: the last 6 characters
+
+## Consensus
+
+As mentioned earlier, Nervos uses NC-MAX (a PoW-based consensus algorithm). Every node can participate in the consensus process either [by mining to produce new blocks, or by verifying new blocks are valid](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0002-ckb/0002-ckb.md#3-consensus).
+
+Differences between NC-MAX and Bitcoin's Nakamoto Consensus:
+
+- NC-MAX decouples transactions confirmation into 2 steps (**propose** & **commit**) to eliminate bottleneck in block propagation
+- NC-MAX dynamically adjusts the block interval, increasing throughput when network latency improves
+- NC-MAX makes selfish mining unprofitable regardless of how the attacker divides its mining power among honest mining, selfish mining and idle, and how many epochs the attack involves
+
+(source: https://github.com/nirenzang/rfcs/blob/master/rfcs/0020-ckb-consensus-protocol/0020-ckb-consensus-protocol.md#technical-overview)
 
 ## Nervos DAO
 
