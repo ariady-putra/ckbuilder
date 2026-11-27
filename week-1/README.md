@@ -18,18 +18,31 @@
    - ran the test script
      <img src="https://github.com/user-attachments/assets/1bed99f5-9e4d-4463-82cd-911e651c208a" />
 
-3. TODO: Finish both [CKB Academy lessons 1 and 2](https://academy.ckb.dev/courses)
+3. Finished both [CKB Academy lesson 1 and 2](https://academy.ckb.dev/courses)
    - read ["A Common Knowledge Base for Crypto-Economy"](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0002-ckb/0002-ckb.md)
    - read ["Consensus RFC"](https://github.com/nirenzang/rfcs/blob/master/rfcs/0020-ckb-consensus-protocol/0020-ckb-consensus-protocol.md)
+   - sent a transaction via the CKB Academy lesson 2 module: [proof](./PROOF.md)
+
+4. TODO: Read ["Intro to Script"](https://docs.nervos.org/docs/script/intro-to-script)
 
 ## Blockers
 
 1. I faced an error when building the `hello-world` contract project initially.
    - the error: [here](./blockers/1.md)
 
+2. I faced an error when doing the CKB Academy lesson 2: CKB basic practical operation when trying to send a transaction.
+   - the error: [here](./blockers/2.md)
+
+3. I faced another error when doing the CKB Academy lesson 2: CKB basic practical operation also when trying to send a transaction.
+   - the error: [here](./blockers/3.md)
+
 ## Solutions
 
 1. Make sure local devnet is running. And since I'm using `pnpm`, set `allowBuilds.esbuild` to `true` in [`pnpm-workspace.yaml`](./hello-world/pnpm-workspace.yaml), delete the `node_modules` directory, re-run `pnpm` install and build. And then finally, the contract should be able to be deployed and tested.
+
+2. Since I was using Coinbase Wallet, instead of Metamask, I needed to disable all other Ethereum wallets except for Metamask.
+
+3. The error indicates that I put too small capacity, so I just copied the minimum CKB value (0x177825f00) and pasted it on to the Transaction Information JSON field as the output capacity.
 
 ## Tangential Topics
 
