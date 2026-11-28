@@ -70,3 +70,21 @@ Differences between NC-MAX and Bitcoin's Nakamoto Consensus:
 ## Nervos DAO
 
 CKB holders may stake their tokens in [Nervos DAO](https://docs.nervos.org/docs/assets-token-standards/economics#nervos-dao). CKB locked in Cells (state rent) [cannot be placed in Nervos DAO](https://docs.nervos.org/docs/assets-token-standards/economics#state-rent).
+
+## Script
+
+A script in Nervos CKB is a binary executable on the CKB-VM. CKB-VM is a crypto agnostic virtual machine, a RISC-V instruction set based VM for executing both onchain and offchain code.
+
+If the program returns a code of 0, we consider the Script successful; any non-zero return codes will be considered Script failures. If any Script in a transaction fails, the transaction will not be included onchain (all or nothing).
+
+The structure of a Script:
+
+```
+Script: {
+  code_hash: H256; // identifies the Script code
+  hash_type: ScriptHashType; // data | data1 | data2 | type
+  args: JsonBytes; // parameters passed to the Script, used to customize behavior
+}
+```
+
+The combination of `code_hash` and `hash_type` tells CKB how to locate the Script code.

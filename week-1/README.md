@@ -23,7 +23,12 @@
    - read ["Consensus RFC"](https://github.com/nirenzang/rfcs/blob/master/rfcs/0020-ckb-consensus-protocol/0020-ckb-consensus-protocol.md)
    - sent a transaction via the CKB Academy lesson 2 module: [proof](./PROOF.md)
 
-4. TODO: Read ["Intro to Script"](https://docs.nervos.org/docs/script/intro-to-script)
+4. Read ["Intro to Script"](https://docs.nervos.org/docs/script/intro-to-script)
+   - read ["Data Hash vs. Type Hash"](https://docs.nervos.org/docs/tech-explanation/data-type-diff)
+
+5. TODO:
+   - [Learning CKB - 24 lessons across 5 phases](https://website-sooty-chi-72.vercel.app/lessons) by Jnr.bit
+   - [Learn CKB in 45 mins](https://github.com/truthixify/learn-ckb-in-45-minutes) by truthixify
 
 ## Blockers
 
